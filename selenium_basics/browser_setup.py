@@ -13,7 +13,7 @@ from selenium.webdriver.common.by import By
 
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-driver.get("https://www.google.com")
-input_element = driver.find_element(By.ID, "input")
-wait = input_element.send_keys("demo automation testing").click()
-class_name = driver.find_element(By.CLASS_NAME, "LC20lb MBeuO DKV0Md").click()
+driver.get("https://demo.automationtesting.in/Index.html")
+input_element = driver.find_element(By.ID, "email")
+wait = input_element.send_keys("manjunathc9942@gmail.com")
+driver.find_element(By.ID, "enterimg").click()
