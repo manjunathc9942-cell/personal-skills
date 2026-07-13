@@ -1,6 +1,6 @@
 # Defining the missing dictionary and list variables
 dic = {1: "Test", 2: "Mark", 3: "Rank"}
-li = ["Apple", "Banana", "Cherry"]
+li = ["Apple", "Banana", "Cherry",5,6,86,86]
 
 # 1. Iterate over the list
 for val in li:
