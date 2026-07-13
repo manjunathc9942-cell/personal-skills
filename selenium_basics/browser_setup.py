@@ -29,7 +29,7 @@
 
 # ==============================================
 
-
+import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
@@ -67,7 +67,7 @@ for hobby in hobbies:
 # dropdown will satrt with select in inspect element, so we need to import Select class from selenium.webdriver.support.ui and import Select class from selenium.webdriver.support.select        
 skills_dropdown = Select(driver.find_element(By.ID, "Skills"))
 skills_dropdown = driver.find_element(By.ID, "Skills")
-sel = Select(skils_dropdown)
+sel = Select(skills_dropdown)
 sel.select_by_index(1)
 # sel.select_by_value("Java")
 # sel.select_by_visible_text("Java")
