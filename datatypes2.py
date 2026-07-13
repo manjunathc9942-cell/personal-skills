@@ -75,7 +75,7 @@ print(f"14. isspace: {'   '.isspace()}")  # Output: True
 # List:
 # ===============
 
-append, extend, insert, remove, pop, index, count, sort, reverse, copy, slice, membership, iteration
+# append, extend, insert, remove, pop, index, count, sort, reverse, copy, slice, membership, iteration
 
 # List (Ordered, mutable sequences)
 # Items can be modified, appended, or reordered dynamically

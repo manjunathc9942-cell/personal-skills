@@ -3,10 +3,10 @@
 # -------------------------------------------------------------------------
 
 # Integer (Whole numbers, notice the typo 'Interger' in the chart graphic)
-type1:
+# type1:
 
 a = 3
-print()
+print(type(a))  # Output: <class 'int'>
 
 
 user_id = 101  
