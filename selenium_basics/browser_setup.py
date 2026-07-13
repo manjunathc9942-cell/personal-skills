@@ -3,7 +3,7 @@
 # pip3 install selenium
 # pip3 install webdriver-manager
 
-locators:
+# locators:
 # id: driver.find_element(By.ID, "value")
 # name: driver.find_element(By.NAME, "value")
 # CLASS_NAME: driver.find_element(By.CLASS_NAME, "value")
