@@ -36,6 +36,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.select import Select
 
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
@@ -43,6 +44,8 @@ driver.get("https://demo.automationtesting.in/Index.html")
 input_element = driver.find_element(By.ID, "email")
 wait = input_element.send_keys("manjunathc@gmail.com")
 driver.find_element(By.ID, "enterimg").click()
+
+driver.maximize_window()
 
 first_name = driver.find_element(By.XPATH, "//input[@placeholder='First Name']")
 first_name.send_keys("Manjunath")
@@ -61,8 +64,25 @@ for hobby in hobbies:
     value = hobby.get_attribute("value")
     if value in ["Cricket"]:
         hobby.click()
+# dropdown will satrt with select in inspect element, so we need to import Select class from selenium.webdriver.support.ui and import Select class from selenium.webdriver.support.select        
 skills_dropdown = Select(driver.find_element(By.ID, "Skills"))
-skills_dropdown.select_by_visible_text("Android")
+sel = Select(skils_dropdown)
+sel.select_by_index(1)
+# sel.select_by_value("Java")
+# sel.select_by_visible_text("Java")
 
-languages_dropdown = Select(driver.find_element(By.ID, "msdd"))
-languages_dropdown.select_by_index(0)
+# Hard freeze for 5 seconds no matter what
+time.sleep(20)
+
+
+# navigate to the next page
+driver.get("https://www.w3schools.com/html/html_forms.asp")
+
+# back
+driver.back()
+
+# refresh
+driver.refresh()
+
+# forward
+driver.forward()
