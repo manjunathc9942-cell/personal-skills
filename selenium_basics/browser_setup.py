@@ -56,19 +56,15 @@ phone = driver.find_element(By.XPATH, "//input[@ng-model='Phone']")
 phone.send_keys("1234567890")
 gender = driver.find_element(By.XPATH, "//input[@value='Male']")
 gender.click()
-Hobbies = driver.find_element(By.XPATH, "//input[@type='checkbox']")
-for hobby in Hobbies:
+hobbies = driver.find_elements(By.XPATH, "//input[@type='checkbox']")
+for hobby in hobbies:
     value = hobby.get_attribute("value")
-    if value == "Cricket":
+    if value in ["Cricket"]:
         hobby.click()
-        break           
-    if value == "Movies":
+Languages = driver.find_element(By.ID, "msdd").click()
+for language in Languages:
+    value = language.get_attribute("value")
+    if value in ["ENGLISH"]:
         hobby.click()
-        break   
-    if value == "Hockey":
-        hobby.click()
-        break
-Languages = driver.find_element(By.ID, "Languagess")
-dropdown = Select(driver.find_element(By.ID, "Skills"))
-select = Select(dropdown_element)
-driver.find_element(By.XPATH, "//*[@value='Android']").click()
+skills = Select(driver.find_element(By.ID, "Skills"))
+skills.select_by_visible_text("Android")
