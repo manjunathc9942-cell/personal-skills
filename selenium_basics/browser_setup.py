@@ -68,8 +68,8 @@ for hobby in hobbies:
 skills_dropdown = Select(driver.find_element(By.ID, "Skills"))
 skills_dropdown = driver.find_element(By.ID, "Skills")
 sel = Select(skills_dropdown)
-sel.select_by_index(1)
-# sel.select_by_value("Java")
+# sel.select_by_index(3)
+sel.select_by_value("Java")
 # sel.select_by_visible_text("Java")
 
 # Hard freeze for 5 seconds no matter what
