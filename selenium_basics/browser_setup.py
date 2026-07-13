@@ -61,11 +61,8 @@ for hobby in hobbies:
     value = hobby.get_attribute("value")
     if value in ["Cricket"]:
         hobby.click()
-Languages = driver.find_element(By.ID, "msdd")
-language.select(Languages)
-language.select_by_Index(0)
+skills_dropdown = Select(driver.find_element(By.ID, "Skills"))
+skills_dropdown.select_by_visible_text("Android")
 
-
-skills = Select(driver.find_element(By.ID, "Skills"))
-skill.slect(skills)
-skill.select_by_visible_text("Android")
+languages_dropdown = Select(driver.find_element(By.ID, "msdd"))
+languages_dropdown.select_by_index(0)
