@@ -87,3 +87,9 @@ driver.refresh()
 
 # forward
 driver.forward()
+
+driver.minimize_window()
+
+time.sleep(15)
+
+driver.quit()
