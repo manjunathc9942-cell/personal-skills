@@ -21,7 +21,7 @@ try:
     driver.switch_to.alert.accept()  # Accept the alert
     time.sleep(2)  # Wait after accepting the alert 
 
-    print("2. Handling Confirm Alert")
+    print("2. Handling Cancel Alert")
     driver.find_element(By.XPATH,"//a[@href='#CancelTab']").click()
     time.sleep(2)  # Wait for the tab to load
     driver.find_element(By.XPATH,"//button[@class='btn btn-primary']").click()
