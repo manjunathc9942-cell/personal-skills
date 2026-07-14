@@ -7,7 +7,7 @@ for val in li:
     print(val)
 
 # 2. Iterate using an index range
-for i in range(10):
+for i in range(20):
     print(i)
 
 # 3. Iterate over the dictionary using key and value unpacking
