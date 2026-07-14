@@ -1,6 +1,33 @@
 # To install selenium and webdriver-manager, run the following commands in your terminal:
 # pip3 install selenium webdriver-manager
 
+
+# locators:
+# id: driver.find_element(By.ID, "value")
+# name: driver.find_element(By.NAME, "value")
+# CLASS_NAME: driver.find_element(By.CLASS_NAME, "value")
+# TAG_NAME: driver.find_element(By.TAG_NAME, "value")
+# LINK_TEXT: driver.find_element(By.LINK_TEXT, "value")
+# PARTIAL_LINK_TEXT: driver.find_element(By.PARTIAL_LINK_TEXT, "value")
+# CSS_SELECTOR: driver.find_element(By.CSS_SELECTOR, "value")
+
+# xpath locators:
+# //tagname[@attribute='value'] | //*[@attribute='value'] 
+# //tagname[@attribute='value' and @attribute='value']
+# //tagname[@attribute='value' or @attribute='value'] 
+# //tagname[contains(@attribute,'value')] 
+# //tagname[starts-with(@attribute,'value')] 
+# //tagname[text()='value']
+# //tagname[contains(text(),'value')] 
+# //tagname[starts-with(text(),'value')] 
+# //tagname[ends-with(text(),'value')]
+
+
+# following-sibling: //tagname[@attribute='value']/following-sibling::tagname
+# preceding-sibling: //tagname[@attribute='value']/preceding-sibling::tagname
+
+
+
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
