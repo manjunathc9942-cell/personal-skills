@@ -1,0 +1,12 @@
+Running the command pip3 install -U pytest does two things:
+
+pip3 install pytest: It downloads and installs pytest, which is one of the most popular, powerful, and widely used automation testing frameworks in Python.
+
+The -U (or --upgrade) flag: It ensures that if you already have pytest installed on your Mac, it will immediately overwrite the old version and upgrade it to the absolute latest version available.
+
+
+command: 
+pip3 install -U pytest
+
+vesrion check:
+python3 -m pytest --version
