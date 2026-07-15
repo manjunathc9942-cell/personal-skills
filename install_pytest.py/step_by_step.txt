@@ -10,3 +10,13 @@ pip3 install -U pytest
 
 vesrion check:
 python3 -m pytest --version
+
+
+
+
+
+Running Tests Later
+Moving forward, whenever you want to execute your automation test files using pytest, just use the python3 -m prefix like this:
+
+command
+python3 -m pytest your_test_file.py
