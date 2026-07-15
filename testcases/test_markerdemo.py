@@ -37,7 +37,7 @@ def test_is_not_required2():  # if the don't want ot run the multiple test cases
 @pytest.mark.xfail  # if the test case is expected to fail, then use this marker. It will not be counted as a failure in the test report.
 def test_failurecases():
     print("Running xfail test...") 
-    assert 4 == 5
+    assert 4 == 4
 
 
 

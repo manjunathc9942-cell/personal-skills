@@ -26,3 +26,6 @@ def test_printUrl(launch_browser):
     driver = launch_browser 
     driver.get("https://www.redbus.in/")
     print(driver.current_url)
+    print("Running test code...") 
+    print("failure")  
+    assert 4 == 3

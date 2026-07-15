@@ -5,4 +5,4 @@ def test_code():
 def test_code2():
     print("Running test code...") 
     print("failure")  
-    assert  4==5
+    assert 4 == 4
