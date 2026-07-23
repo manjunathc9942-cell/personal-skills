@@ -1,30 +1,74 @@
-import warnings
-import urllib3
 import os
-import pytest
+import warnings
 from datetime import datetime
 
+import pytest
+import urllib3
+
+
+# ==========================================================
+# HTML Report Title
+# ==========================================================
 
 def pytest_html_report_title(report):
-    report.title = "API Automation Test Report"  # <-- Change your title name here!
+    """
+    Custom title for the HTML report.
+    """
+    report.title = "API Automation Test Report"
+
+
+# ==========================================================
+# PyTest Configuration
+# ==========================================================
 
 @pytest.hookimpl(tryfirst=True)
 def pytest_configure(config):
-    # 1. Mute that annoying NotOpenSSLWarning across the entire pytest session
-    warnings.filterwarnings("ignore", category=urllib3.exceptions.NotOpenSSLWarning)
+    """
+    Executes before the test session starts.
+    - Suppresses SSL warnings
+    - Creates Reports directory
+    - Generates timestamped HTML report
+    """
 
-    # 2. Safely handle the report directory creation
-    report_dir = "reports"
-    if not os.path.exists(report_dir):
-        os.makedirs(report_dir)
+    # Suppress urllib3 SSL warning (macOS LibreSSL)
+    warnings.filterwarnings(
+        "ignore",
+        category=urllib3.exceptions.NotOpenSSLWarning
+    )
 
-    # 3. Add timestamp to report file name
-    now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    config.option.htmlpath = f"{report_dir}/report_{now}.html"
+    # Create Reports directory if it doesn't exist
+    report_dir = "Reports"
+    os.makedirs(report_dir, exist_ok=True)
 
+    # Timestamp for report
+    timestamp = datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
+
+    # HTML Report
+    config.option.htmlpath = os.path.join(
+        report_dir,
+        f"API_Automation_Report_{timestamp}.html"
+    )
+
+    # Embed CSS & JavaScript inside HTML
+    config.option.self_contained_html = True
+
+
+# ==========================================================
+# Test Session Setup & Teardown
+# ==========================================================
 
 @pytest.fixture(scope="session", autouse=True)
 def setup_teardown():
-    print("\nSetting up resources...")
+    """
+    Executes once before and after the entire test suite.
+    """
+
+    print("\n" + "=" * 60)
+    print("Starting API Automation Test Execution")
+    print("=" * 60)
+
     yield
-    print("\nTearing down resources...")
+
+    print("\n" + "=" * 60)
+    print("API Automation Test Execution Completed")
+    print("=" * 60)

@@ -13,3 +13,8 @@ class APIClient:
         url = f"{APIClient.BASE_URL}/{endpoint}"
         response = requests.get(url, headers=self.headers)
         return response
+
+    def post(self, endpoint, data):
+        url = f"{APIClient.BASE_URL}/{endpoint}"
+        # Make sure this says requests.post, NOT requests.get!
+        return requests.post(url, headers=self.headers, json=data)
